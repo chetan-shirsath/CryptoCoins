@@ -5,10 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CryptoCoinDetailsComponent } from './Components/CryptoCoinDetailsComponent';
 import { CryptoHomeComponent } from './Components/CryptoHomeComponent';
+import { ErrorComponent } from './Components/ErrorComponent';
+import { NavBarComponent } from './Components/NavBarComponent';
 
 const routes: Routes = [
   { path: 'cryptocoin', component: CryptoHomeComponent },
-   { path: 'cryptocoin/coindetails/:coinId', component: CryptoCoinDetailsComponent }
+   { path: 'cryptocoin/coindetails/:coinId', component: CryptoCoinDetailsComponent },
+   { path: 'cryptocoin/error', component: ErrorComponent }
 ];
 
 @NgModule({
@@ -19,7 +22,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     CryptoHomeComponent,
-    CryptoCoinDetailsComponent
+    CryptoCoinDetailsComponent,
+    NavBarComponent,
+    ErrorComponent
   ]
 
 })

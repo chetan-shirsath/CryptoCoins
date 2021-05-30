@@ -8,29 +8,41 @@ import { CryptoCoinService } from '../Services/CryptoCoinService';
   templateUrl: '../Views/CryptoHomeView.html',
   //  styleUrls: ['../Styles/header.css']
 })
-export class CryptoHomeComponent implements OnInit {
+export class CryptoHomeComponent {
 
   private cryptoCoin: CryptoCoin[];
   private coin: CryptoCoin;
+  private coinIds: Number[];
   constructor(private cryptoCoinService: CryptoCoinService,
-    private router: Router) { }
-
-   ngOnInit() {
-    this.cryptoCoinService.getCoins()
-        .subscribe(
-          data => this.cryptoCoin = data,
-          err => {
-            console.log('in comp' + err);
-
-        });
-  }
-
-  navigateToCoinDetails(coinId: Number) {
-    if (coinId !== null) {
-      this.router.navigate(['cryptocoin/coindetails',  coinId]);
-    } else {
-      this.router.navigate(['cryptocoin/coindetails',  coinId]);
+    private router: Router) {
+      this.getCoins();
     }
 
+   getCoinIds() {
+    this.coinIds = this.cryptoCoin.map(c => c.id);
+  }
+
+    getCoins() {
+      this.cryptoCoinService.getCoins()
+      .subscribe(
+        data => {
+          if (data.length !== 0) {
+            this.cryptoCoin = data;
+            this.getCoinIds();
+          } else {
+            this.router.navigateByUrl('cryptocoin/error');
+          }},
+        err => {
+          console.log('in comp' + err);
+          this.router.navigateByUrl('cryptocoin/error');
+      });
+    }
+
+  navigateToCoinDetails(coinId) {
+    if (coinId !== null && !isNaN(coinId) && this.coinIds.includes(coinId)) {
+      this.router.navigate(['cryptocoin/coindetails',  coinId]);
+    } else {
+      this.router.navigateByUrl('cryptocoin/error');
+    }
   }
 }

@@ -1,10 +1,21 @@
 
 <div><h1>Welcome</h1></div>
-<div>
-  <ul>
-    <li *ngFor="let coin of cryptoCoin">
-      <span><h1>{{coin.id}}</h1> <h1>{{coin.name}}</h1> <h1>{{coin.symbol}}</h1> <h1>{{coin.price}}</h1></span><button (click)="navigateToCoinDetails(coin.id)">click here</button>
-      <!-- <span><h1>{{coin.id}}</h1> <h1>{{coin.name}}</h1> <h1>{{coin.symbol}}</h1> <h1>{{coin.price}}</h1></span><button [routerLink] = "['coindetails/', coin.id]">click here</button> -->
-    </li>
-  </ul>
-</div>
+    <div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Coin Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Latest Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let coin of cryptoCoin">
+            <th scope="row">{{coin.name}}</th>
+            <td>{{coin.symbol}}</td>
+            <td>{{coin.price}}</td>
+            <td><button (click)="navigateToCoinDetails(coin.id)">Details</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
