@@ -5,7 +5,8 @@ import 'bootstrap';
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: '../Views/NavBarView.html'
+  templateUrl: '../Views/NavBarView.html',
+  styleUrls: ['../Styles/NavBarStyle.scss']
 })
 export class NavBarComponent {
 
