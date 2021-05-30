@@ -5,9 +5,9 @@
       <h3><b>{{coin.name}}  | {{coin.symbol}}</b></h3>
       <p><b>Price: </b>{{coin.price}}</p>
       <p><b>24-Hour Volume: </b>{{coin.volume}}</p>
-      <p><b>$100 = </b></p>
-      <p><b>$250 = </b></p>
-      <p><b>$5,000 = </b></p>
+      <p><b>$100 &nbsp;&nbsp; &nbsp;= &nbsp;</b>{{(100/coin.price).toFixed(8)}} coins</p>
+      <p><b>$250 &nbsp;&nbsp; &nbsp;= &nbsp;</b>{{(250/coin.price).toFixed(8)}} coins</p>
+      <p><b>$5,000 &nbsp;= &nbsp;</b>{{(5000/coin.price).toFixed(8)}} coins</p>
     </div>
     <button [routerLink] = "['/cryptocoin/']">Home</button>
   </div>
