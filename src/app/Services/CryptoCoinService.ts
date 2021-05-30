@@ -30,7 +30,7 @@ export class CryptoCoinService {
       tap(() => console.log('HTTP request executed')),
       catchError(err => {
         console.log(err);
-        return err;
+        throw err;
       })
   );
   }

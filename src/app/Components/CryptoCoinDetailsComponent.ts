@@ -10,7 +10,6 @@ import { CryptoCoinService } from '../Services/CryptoCoinService';
 })
 export class CryptoCoinDetailsComponent {
 
-  private cryptoCoin: CryptoCoin[];
   private coin: CryptoCoin;
 
   constructor(private cryptoCoinService: CryptoCoinService,
@@ -22,10 +21,16 @@ export class CryptoCoinDetailsComponent {
    getCoinDetails(coinId) {
     this.cryptoCoinService.getCoinDetails(coinId)
     .subscribe(
-    data => this.coin = data,
+    data => {
+      if (data !== null) {
+        this.coin = data;
+      } else {
+        this.route.navigateByUrl('cryptocoin/error');
+      }
+    },
       err => {
         console.log('in comp' + err);
-
+        this.route.navigateByUrl('cryptocoin/error');
     });
   }
 }
