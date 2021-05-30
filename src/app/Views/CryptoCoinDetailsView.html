@@ -1,10 +1,13 @@
-
-<div>
-  <p>{{coin.name}}</p> | <p>{{coin.symbol}}</p>
-  Price: <p>{{coin.price}}</p>
-  24-Hour Volume: <p>{{coin.volume}}</p>
-  $100 = <p>{{coin.price}}</p>
-  $250 = <p>{{coin.price}}</p>
-  $5,000 = <p>{{coin.price}}</p>
-</div>
-<div><button [routerLink] = "['/cryptocoin/']">Goback</button></div>
+  <div class="title"><h1>Crypto-Coin Details</h1></div>
+  <div class="card">
+    <div  class="txt"><h2>Crypto-Coin</h2></div>
+    <div class="container">
+      <h3><b>{{coin.name}}  | {{coin.symbol}}</b></h3>
+      <p><b>Price: </b>{{coin.price}}</p>
+      <p><b>24-Hour Volume: </b>{{coin.volume}}</p>
+      <p><b>$100 = </b></p>
+      <p><b>$250 = </b></p>
+      <p><b>$5,000 = </b></p>
+    </div>
+    <button [routerLink] = "['/cryptocoin/']">Home</button>
+  </div>

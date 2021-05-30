@@ -6,7 +6,7 @@ import { CryptoCoinService } from '../Services/CryptoCoinService';
 @Component({
   selector: 'app-cryptocoinhome-outlet',
   templateUrl: '../Views/CryptoHomeView.html',
-  //  styleUrls: ['../Styles/header.css']
+  styleUrls: ['../Styles/CryptoHomeStyle.scss']
 })
 export class CryptoHomeComponent {
 

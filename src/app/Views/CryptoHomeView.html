@@ -1,19 +1,21 @@
 
-<div><h1>Welcome</h1></div>
-    <div>
-      <table class="table table-striped">
+<div class="title"><h1>Welcome to Crypto-Tracker</h1></div>
+    <div class="card">
+      <div class="txt"><h2>Crypto-Coins</h2></div>
+      <table>
         <thead>
           <tr>
-            <th scope="col">Coin Name</th>
-            <th scope="col">Symbol</th>
-            <th scope="col">Latest Price</th>
+            <th (click)="sortColumn(name)">Coin Name</th>
+            <th (click)="sortColumn(symbol)">Symbol</th>
+            <th (click)="sortColumn(price)">Latest Price</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let coin of cryptoCoin">
-            <th scope="row">{{coin.name}}</th>
+            <td>{{coin.name}}</td>
             <td>{{coin.symbol}}</td>
-            <td>{{coin.price}}</td>
+            <td><span>&#36;</span>{{coin.price}}</td>
             <td><button (click)="navigateToCoinDetails(coin.id)">Details</button></td>
           </tr>
         </tbody>
