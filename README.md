@@ -1,5 +1,26 @@
 # CryptoCoins
 
+
+* Developed the single page web application client in Angular 7 framework which displays following details - 
+  * Home page - displays the table of coins fetched from the backend web service.
+  * Details page - displays the details of the coin fetched using coin id.
+  * Error page - displays the error message and redirects to the home page.
+
+* Following modules are present in the application -
+  * Components
+  * Models
+  * Services
+  * Styles
+  * Views
+
+* Angular routing is used for the navigation purpose.
+
+* Following new feature for the improvement
+  * Sorting the table according to columns
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
 ## Development server
