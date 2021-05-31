@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CryptoCoin } from '../Models/CryptoCoin';
 import { CryptoCoinService } from '../Services/CryptoCoinService';
-
 @Component({
   selector: 'app-cryptocoindetails-outlet',
   templateUrl: '../Views/CryptoCoinDetailsView.html',

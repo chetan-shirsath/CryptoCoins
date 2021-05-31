@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CryptoCoin } from '../Models/CryptoCoin';
 import { CryptoCoinService } from '../Services/CryptoCoinService';
@@ -13,6 +13,7 @@ export class CryptoHomeComponent {
   private cryptoCoin: CryptoCoin[];
   private coin: CryptoCoin;
   private coinIds: Number[];
+
   constructor(private cryptoCoinService: CryptoCoinService,
     private router: Router) {
       this.getCoins();
@@ -43,6 +44,12 @@ export class CryptoHomeComponent {
       this.router.navigate(['cryptocoin/coindetails',  coinId]);
     } else {
       this.router.navigateByUrl('cryptocoin/error');
+    }
+  }
+
+  sortColumn(columnName) {
+    if (columnName !== null && isNaN(columnName)) {
+      this.cryptoCoin.sort((a, b) => (a[columnName] > b[columnName]) ? 1 : -1);
     }
   }
 }
