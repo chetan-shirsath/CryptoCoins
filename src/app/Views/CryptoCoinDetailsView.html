@@ -1,7 +1,7 @@
   <div class="title"><h1>Crypto-Coin Details</h1></div>
   <div class="card">
     <div  class="txt"><h2>Crypto-Coin</h2></div>
-    <div class="container">
+    <div class="container" *ngIf = "coin">
       <h3><b>{{coin.name}}  | {{coin.symbol}}</b></h3>
       <p><b>Price: </b>{{coin.price}}</p>
       <p><b>24-Hour Volume: </b>{{coin.volume}}</p>

@@ -1,5 +1,4 @@
 
-
 export class CryptoCoin {
   id: Number;
   name: String;
