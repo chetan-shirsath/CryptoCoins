@@ -29,10 +29,26 @@ table {
   border-spacing: 0.5rem;
   border: 1px solid lightgray;
   border-radius: 4px;
+  display: grid;
+  overflow: auto;
+  text-align: left;
+ }
+
+ tbody{
+  // display: inline-block;
+  // overflow-y: scroll;
+  height: 500px;
+  text-align: left;
+
+ }
+
+ thead{
+  display: inline-table;
+  text-align: left;
  }
 
  th, td {
-  text-align: left;
+  // text-align: left;
   font-size: 18px;
  }
 
@@ -41,7 +57,7 @@ table {
      color: rgb(7, 7, 7);
      height: 4vh;
      cursor: pointer;
- }
+  }
 
  tr{
   height: 6vh;
