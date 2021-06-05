@@ -15,7 +15,7 @@
           <tr *ngFor="let coin of cryptoCoin">
             <td>{{coin.name}}</td>
             <td>{{coin.symbol}}</td>
-            <td><span>&#36;</span>{{coin.price}}</td>
+            <td>{{coin.price | currency}}</td>
             <td><button (click)="navigateToCoinDetails(coin.id)">Details</button></td>
           </tr>
         </tbody>
